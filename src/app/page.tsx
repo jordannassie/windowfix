@@ -66,13 +66,13 @@ export default function HomePage() {
 
       {/* ── NAV ── */}
       <header className="bg-black">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-0">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-0 leading-none">
           <Image
             src={LOGO}
             alt="1ChipFix"
             width={640}
             height={320}
-            className="h-[192px] w-auto object-contain"
+            className="h-[192px] w-auto object-contain block my-0"
             priority
           />
           <a
