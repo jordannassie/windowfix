@@ -46,12 +46,16 @@ export default function HomePage() {
       <header className="hero-bg">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-white">
-              <span className="text-lg font-black tracking-tight">WF</span>
+            <div className="overflow-hidden rounded-2xl bg-white/10 p-1">
+              <Image
+                src="/1chipfix-logo.png"
+                alt="1ChipFix logo"
+                width={48}
+                height={48}
+                className="h-10 w-10 object-cover"
+              />
             </div>
-            <span className="text-xl font-bold text-white">
-              Window<span className="text-blue-200">Fix</span>
-            </span>
+            <span className="text-xl font-bold text-white">1ChipFix</span>
           </div>
           <a
             href="tel:+18005551234"
@@ -67,10 +71,11 @@ export default function HomePage() {
               Mobile windshield chip repair
             </span>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Stop a chip before it becomes a <span className="text-blue-200">crack.</span>
+              1ChipFix keeps windshield damage from becoming a{" "}
+              <span className="text-blue-200">crack.</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-slate-200">
-              WindowFix sends licensed technicians with a fully equipped van so you can keep your day moving.
+              1ChipFix sends licensed technicians with a fully equipped van so you can keep your day moving.
               No dealer trips, no surprises.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -112,7 +117,7 @@ export default function HomePage() {
 
       <main className="flex flex-1 flex-col gap-12 px-6 py-12">
         <section className="mx-auto w-full max-w-6xl rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-3xl font-bold text-slate-900">Why you’ll love WindowFix</h2>
+          <h2 className="text-3xl font-bold text-slate-900">Why you’ll love 1ChipFix</h2>
           <p className="mt-2 text-sm text-slate-500">We keep your day moving while we take care of the windshield.</p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {features.map((feature) => (
@@ -153,7 +158,7 @@ export default function HomePage() {
         </section>
 
         <footer className="mx-auto w-full max-w-6xl rounded-3xl border border-slate-200/70 bg-white py-6 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} WindowFix · All rights reserved
+          © {new Date().getFullYear()} 1ChipFix · All rights reserved
         </footer>
       </main>
     </div>
