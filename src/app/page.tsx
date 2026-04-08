@@ -119,13 +119,13 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
 
-      <section className="bg-gray-100 py-1 text-center text-xs uppercase tracking-[0.5em] text-gray-500">
+      <section className="bg-gray-100 py-2 text-center text-xs uppercase tracking-[0.5em] text-gray-500">
         <span className="font-semibold text-gray-700">Serving</span>{" "}
         <span className="font-semibold text-[#CC0000]">{cityState ?? "your local area"}</span>
       </section>
       {/* ── NAV ── */}
-      <header className="bg-black py-0">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 py-0 leading-none">
+      <header className="bg-black py-2">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 py-1 leading-none">
           <Image
             src={LOGO}
             alt="1ChipFix"
