@@ -46,8 +46,9 @@ const steps = [
     desc: "Reach us in 1 click from your phone.",
     icon: (
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M3 5a2 2 0 012-2h3.28c.374 0 .715.208.884.54l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a9.042 9.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1c-5.284 0-11-6.716-11-15V5z" />
+        <rect x="5" y="3" width="14" height="18" rx="3" strokeWidth={1.5} />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 16h.01" />
       </svg>
     ),
   },
@@ -57,7 +58,7 @@ const steps = [
     desc: "Text us a quick photo so we can see the damage.",
     icon: (
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <rect x="3" y="6" width="18" height="12" rx="2" ry="2" strokeWidth={1.5} />
+        <rect x="3" y="6" width="18" height="12" rx="2" strokeWidth={1.5} />
         <circle cx="12" cy="12" r="3.5" strokeWidth={1.5} />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 8h.01" />
       </svg>
@@ -71,11 +72,13 @@ const steps = [
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M12 21c4.418 0 8-3.582 8-8 0-4.147-3.214-7.55-7.305-7.93a1 1 0 00-.328 0C7.214 5.45 4 8.853 4 13c0 4.418 3.582 8 8 8z" />
-        <circle cx="12" cy="13" r="3" strokeWidth={1.5} />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M12 9a2 2 0 012 2h0a2 2 0 01-2 2h0a2 2 0 01-2-2h0a2 2 0 012-2z" />
       </svg>
     ),
   },
 ];
+
 
 export default function HomePage() {
   const [locationLabel, setLocationLabel] = useState<string>("Serving your local area");
