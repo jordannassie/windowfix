@@ -109,14 +109,14 @@ export default function HomePage() {
         <span className="font-semibold text-[#CC0000]">{cityState ?? "your local area"}</span>
       </section>
       {/* ── NAV ── */}
-      <header className="bg-black py-2">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 py-1 leading-none">
+      <header className="bg-black py-3">
+        <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-3 py-1 leading-none">
           <Image
             src={LOGO}
             alt="1ChipFix"
             width={720}
             height={360}
-            className="h-[220px] w-auto object-contain block my-3"
+            className="h-[220px] w-auto object-contain block my-5"
             priority
           />
           <a
