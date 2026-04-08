@@ -65,19 +65,19 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
 
       {/* ── NAV ── */}
-      <header className="border-b border-gray-100 bg-white">
+      <header className="bg-black">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Image
             src={LOGO}
             alt="1ChipFix"
-            width={120}
-            height={60}
-            className="h-14 w-auto object-contain"
+            width={220}
+            height={110}
+            className="h-28 w-auto object-contain"
             priority
           />
           <a
             href="tel:+18005551234"
-            className="flex items-center gap-2 rounded-full border border-gray-300 px-5 py-2 text-sm font-semibold text-gray-800 transition hover:border-gray-500"
+            className="flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
           >
             <svg className="h-4 w-4 text-[#CC0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -195,13 +195,13 @@ export default function HomePage() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-gray-200 bg-white py-8 text-center text-sm text-gray-400">
+      <footer className="bg-black py-10 text-center text-sm text-gray-400">
         <Image
           src={LOGO}
           alt="1ChipFix"
-          width={80}
-          height={40}
-          className="mx-auto mb-4 h-10 w-auto object-contain"
+          width={220}
+          height={110}
+          className="mx-auto mb-5 h-28 w-auto object-contain"
         />
         <p>© {new Date().getFullYear()} 1ChipFix · All rights reserved</p>
         <p className="mt-1">
