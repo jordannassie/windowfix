@@ -4,7 +4,7 @@ import ZipForm from "@/components/ZipForm";
 const LOGO =
   "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/logo/ChatGPT%20Image%20Apr%208,%202026,%2007_13_17%20AM.png";
 const HERO_IMG =
-  "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/Window1.jpg";
+  "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/Image.jpg";
 
 const features = [
   {
