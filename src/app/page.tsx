@@ -1,62 +1,45 @@
 import Image from "next/image";
-import ZipForm from "@/components/ZipForm";
 
 const LOGO =
   "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/logo/ChatGPT%20Image%20Apr%208,%202026,%2007_13_17%20AM.png";
 const HERO_IMG =
   "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/Image.jpg";
 
-const features = [
+const PHONE = "+18005551234";
+const SMS_MESSAGE = encodeURIComponent(
+  "Hi, I have a windshield chip. I'm sending a photo now. My location is:"
+);
+
+const benefits = [
   {
-    icon: (
-      <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none">
-        <rect x="14" y="8" width="36" height="48" rx="4" stroke="#CC0000" strokeWidth="3" />
-        <path d="M24 28l6 6 10-10" stroke="#CC0000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: "Nationwide guarantee",
-    desc: "Your vehicle is safe with us. We back all windshield chip repairs with a nationwide guarantee.",
+    title: "1 Click to Call",
+    desc: "Call us fast and get help right away.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none">
-        <rect x="6" y="24" width="36" height="22" rx="3" stroke="#CC0000" strokeWidth="3" />
-        <path d="M42 32h10l6 10H42V32z" stroke="#CC0000" strokeWidth="3" strokeLinejoin="round" />
-        <circle cx="18" cy="46" r="4" stroke="#CC0000" strokeWidth="3" />
-        <circle cx="50" cy="46" r="4" stroke="#CC0000" strokeWidth="3" />
-      </svg>
-    ),
-    title: "Come to us or we'll come to you",
-    desc: "Book a chip repair at your nearest location, or have a mobile tech come directly to you.",
+    title: "1 Click to Text",
+    desc: "Text your chip photo and location in seconds.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none">
-        <rect x="18" y="6" width="28" height="52" rx="4" stroke="#CC0000" strokeWidth="3" />
-        <circle cx="32" cy="48" r="3" fill="#CC0000" />
-        <path d="M24 16h16" stroke="#CC0000" strokeWidth="3" strokeLinecap="round" />
-      </svg>
-    ),
-    title: "Easy online scheduling",
-    desc: "Three quick steps to get your windshield chip repaired so we can get you back on the road fast.",
+    title: "Fast Local Help",
+    desc: "Serving local drivers with quick windshield chip repair.",
   },
 ];
 
 const steps = [
   {
     num: "1",
-    title: "Enter your ZIP",
-    desc: "Tell us where you are and we match you to the nearest available technician.",
+    title: "Call or text us",
+    desc: "Reach us in 1 click from your phone.",
   },
   {
     num: "2",
-    title: "Pick your time",
-    desc: "Choose a same-day or next-day slot that fits your schedule — we come to you.",
+    title: "Send a photo of your chip",
+    desc: "A quick photo helps us understand the damage.",
   },
   {
     num: "3",
-    title: "Chip fixed. Done.",
-    desc: "Our certified tech repairs the chip in about 30 minutes. Guaranteed.",
+    title: "Tell us your location",
+    desc: "Send your city so we can help you fast.",
   },
 ];
 
@@ -66,18 +49,18 @@ export default function HomePage() {
 
       {/* ── NAV ── */}
       <header className="bg-black">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-0 leading-none">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-1 leading-none">
           <Image
             src={LOGO}
             alt="1ChipFix"
-            width={640}
-            height={320}
-            className="h-[192px] w-auto object-contain block my-0"
+            width={720}
+            height={360}
+            className="h-[220px] w-auto object-contain block my-0"
             priority
           />
           <a
-            href="tel:+18005551234"
-            className="flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+            href={`tel:${PHONE}`}
+            className="flex items-center gap-2 rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
           >
             <svg className="h-4 w-4 text-[#CC0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -89,27 +72,47 @@ export default function HomePage() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-6 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16">
+      <section className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 py-14 lg:grid-cols-2 lg:gap-16 lg:py-20">
         <div>
-          <p className="text-lg font-bold uppercase tracking-wide text-[#CC0000]">
-            Quick and reliable
+          <p className="text-base font-bold uppercase tracking-wide text-[#CC0000]">
+            QUICK AND RELIABLE
           </p>
-          <h1 className="mt-2 text-5xl font-extrabold leading-tight text-gray-900 lg:text-6xl">
-            windshield chip{" "}
-            <span className="text-[#CC0000]">repairs.</span>
+          <h1 className="mt-3 text-5xl font-extrabold leading-tight text-gray-900 lg:text-6xl">
+            Windshield chip{" "}
+            <span className="text-[#CC0000]">repair.</span>
           </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Get a quote or work with your insurance — we handle it all.
+          <p className="mt-5 text-xl font-semibold text-gray-700">
+            1 Click to Call or Text.<br />
+            Send a photo of your chip and your location.
           </p>
-          <div className="mt-8">
-            <ZipForm />
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={`tel:${PHONE}`}
+              className="flex h-14 items-center justify-center gap-2 rounded-xl bg-[#1B4FD8] px-8 text-base font-bold text-white shadow-lg transition hover:bg-[#1540b8] active:scale-95"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Call Now
+            </a>
+            <a
+              href={`sms:${PHONE}?&body=${SMS_MESSAGE}`}
+              className="flex h-14 items-center justify-center gap-2 rounded-xl border-2 border-[#1B4FD8] bg-white px-8 text-base font-bold text-[#1B4FD8] shadow-sm transition hover:bg-blue-50 active:scale-95"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+              </svg>
+              Text Now
+            </a>
           </div>
-          <a
-            href="tel:+18005551234"
-            className="mt-4 inline-block text-sm font-semibold text-[#1B4FD8] underline underline-offset-2 hover:text-blue-800"
-          >
-            Call to book an appointment →
-          </a>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Tap to call or tap to text.<br />
+            Text us a photo of your chip and your city.
+          </p>
         </div>
 
         <div className="overflow-hidden rounded-3xl shadow-2xl">
@@ -125,35 +128,31 @@ export default function HomePage() {
       </section>
 
       {/* ── RATING STRIP ── */}
-      <section className="border-y border-gray-100 bg-white py-12 text-center">
-        <div className="flex justify-center gap-1 text-4xl">
+      <section className="border-y border-gray-100 bg-white py-10 text-center">
+        <div className="flex justify-center gap-1 text-3xl">
           {"★★★★★".split("").map((s, i) => (
             <span key={i} className="text-yellow-400">{s}</span>
           ))}
         </div>
-        <h2 className="mt-4 text-2xl font-extrabold text-gray-900">
+        <h2 className="mt-3 text-xl font-extrabold text-gray-900">
           Customers rate 1ChipFix 4.9 out of 5
         </h2>
-        <p className="mt-2 text-gray-500">
+        <p className="mt-2 text-sm text-gray-500">
           Our customers trust us to deliver the best chip repairs and service every time.
         </p>
       </section>
 
-      {/* ── FEATURES ── */}
+      {/* ── BENEFITS ── */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-center text-3xl font-extrabold text-gray-900">
-            #1 windshield chip specialist in the country
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {features.map((f) => (
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {benefits.map((b) => (
               <div
-                key={f.title}
+                key={b.title}
                 className="flex flex-col items-center rounded-2xl border border-gray-200 p-8 text-center shadow-sm transition hover:shadow-md"
               >
-                <div className="mb-4">{f.icon}</div>
-                <h3 className="text-lg font-bold text-[#CC0000]">{f.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-500">{f.desc}</p>
+                <h3 className="text-xl font-bold text-[#CC0000]">{b.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-gray-600">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -166,9 +165,6 @@ export default function HomePage() {
           <h2 className="text-center text-3xl font-extrabold text-gray-900">
             How it works
           </h2>
-          <p className="mt-3 text-center text-gray-500">
-            Three simple steps and your windshield chip is fixed.
-          </p>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {steps.map((step) => (
               <div key={step.num} className="flex flex-col items-center text-center">
@@ -183,14 +179,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BOTTOM CTA ── */}
+      {/* ── RED CTA BAND ── */}
       <section className="bg-[#CC0000] py-14 text-center text-white">
-        <h2 className="text-3xl font-extrabold">Don&rsquo;t let a chip become a crack.</h2>
+        <h2 className="text-3xl font-extrabold">Got a chip? Call or text now.</h2>
         <p className="mt-3 text-red-100">
-          Call us or enter your ZIP to get started. Same-day service available.
+          Send a photo of your chip and your location.
         </p>
-        <div className="mt-8 flex justify-center">
-          <ZipForm />
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href={`tel:${PHONE}`}
+            className="flex h-14 items-center justify-center gap-2 rounded-xl bg-white px-8 text-base font-bold text-[#CC0000] shadow-lg transition hover:bg-gray-100 active:scale-95"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Call Now
+          </a>
+          <a
+            href={`sms:${PHONE}?&body=${SMS_MESSAGE}`}
+            className="flex h-14 items-center justify-center gap-2 rounded-xl border-2 border-white bg-[#CC0000] px-8 text-base font-bold text-white shadow-lg transition hover:bg-red-700 active:scale-95"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            Text Now
+          </a>
         </div>
       </section>
 
@@ -205,11 +220,36 @@ export default function HomePage() {
         />
         <p>© {new Date().getFullYear()} 1ChipFix · All rights reserved</p>
         <p className="mt-1">
-          <a href="tel:+18005551234" className="hover:text-gray-600 transition">(800) 555-1234</a>
+          <a href={`tel:${PHONE}`} className="hover:text-gray-200 transition">(800) 555-1234</a>
           {" · "}
-          <a href="mailto:hello@1chipfix.com" className="hover:text-gray-600 transition">hello@1chipfix.com</a>
+          <a href="mailto:hello@1chipfix.com" className="hover:text-gray-200 transition">hello@1chipfix.com</a>
         </p>
       </footer>
+
+      {/* ── MOBILE STICKY BAR ── */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex gap-0 border-t border-gray-300 bg-white shadow-2xl md:hidden">
+        <a
+          href={`tel:${PHONE}`}
+          className="flex flex-1 items-center justify-center gap-2 py-4 text-base font-bold text-[#1B4FD8] transition active:bg-blue-50"
+        >
+          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call Now
+        </a>
+        <div className="w-px bg-gray-300"></div>
+        <a
+          href={`sms:${PHONE}?&body=${SMS_MESSAGE}`}
+          className="flex flex-1 items-center justify-center gap-2 py-4 text-base font-bold text-[#1B4FD8] transition active:bg-blue-50"
+        >
+          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          Text Now
+        </a>
+      </div>
 
     </div>
   );
