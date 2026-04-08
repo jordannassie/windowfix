@@ -71,13 +71,15 @@ const steps = [
     icon: (
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M12 21c4.418 0 8-3.582 8-8 0-4.147-3.214-7.55-7.305-7.93a1 1 0 00-.328 0C7.214 5.45 4 8.853 4 13c0 4.418 3.582 8 8 8z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M12 9a2 2 0 012 2h0a2 2 0 01-2 2h0a2 2 0 01-2-2h0a2 2 0 012-2z" />
+          d="M5 17H3a1 1 0 01-1-1v-5l2-5h12l2 5v5a1 1 0 01-1 1h-2" />
+        <circle cx="7.5" cy="17.5" r="2.5" strokeWidth={1.5} />
+        <circle cx="16.5" cy="17.5" r="2.5" strokeWidth={1.5} />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 17h4" />
       </svg>
     ),
   },
 ];
+
 
 
 export default function HomePage() {
