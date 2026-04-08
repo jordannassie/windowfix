@@ -195,6 +195,28 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── PHOTO GRID ── */}
+      <section className="bg-white px-6 py-6">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-4">
+          {[
+            { src: "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/Manwindow.jpg", alt: "Technician repairing windshield" },
+            { src: "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/c2.jpg", alt: "Windshield chip close-up" },
+            { src: "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/c4.jpg", alt: "Chip repair in progress" },
+            { src: "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/c3.jpg", alt: "Repaired windshield" },
+          ].map((img) => (
+            <div key={img.src} className="overflow-hidden rounded-2xl shadow-sm">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={400}
+                height={280}
+                className="h-40 w-full object-cover transition hover:scale-105 duration-300 md:h-52"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── RATING → TESTIMONIALS ── */}
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-6">
