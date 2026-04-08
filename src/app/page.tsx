@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+
+import { useEffect, useState } from "react";
 
 const LOGO =
   "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/logo/ChatGPT%20Image%20Apr%208,%202026,%2007_13_17%20AM.png";
@@ -64,6 +68,28 @@ const steps = [
 ];
 
 export default function HomePage() {
+  const [locationLabel, setLocationLabel] = useState<string>("Serving your local area");
+
+  useEffect(() => {
+    let canceled = false;
+
+    fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        if (canceled) return;
+        const { city, region } = data ?? {};
+        if (city && region) {
+          setLocationLabel(`Serving ${city}, ${region} and nearby areas`);
+        }
+      })
+      .catch(() => {
+        // keep fallback
+      });
+
+    return () => {
+      canceled = true;
+    };
+  }, []);
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
 
@@ -105,6 +131,7 @@ export default function HomePage() {
             1 Click to Call or Text.<br />
             Send a photo of your chip and your location.
           </p>
+          <p className="mt-3 text-sm text-gray-500">{locationLabel}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
