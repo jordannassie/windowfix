@@ -29,13 +29,37 @@ const benefits = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Michael R.",
+    city: "Prosper, TX",
+    text: "Fast response, easy to text, and the chip repair looked great. Super simple process.",
+    image:
+      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=160&q=80",
+  },
+  {
+    name: "Sarah T.",
+    city: "Frisco, TX",
+    text: "I sent a photo and my location, and they got back to me fast. Really convenient and professional.",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80",
+  },
+  {
+    name: "Daniel K.",
+    city: "McKinney, TX",
+    text: "Quick, local, and easy. Way better than waiting around at a glass shop.",
+    image:
+      "https://images.unsplash.com/photo-1457449940276-e8deed18bfff?auto=format&fit=crop&w=160&q=80",
+  },
+];
+
 const steps = [
   {
     num: "1",
     title: "Call or text us",
     desc: "Reach us in 1 click from your phone.",
     icon: (
-      <svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
           d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
@@ -46,7 +70,7 @@ const steps = [
     title: "Send a photo of your chip",
     desc: "A quick photo helps us understand the damage.",
     icon: (
-      <svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
           d="M5 7h2l1-2h8l1 2h2a2 2 0 012 2v7a2 2 0 01-2 2h-6l-2 2l-2-2H5a2 2 0 01-2-2V9a2 2 0 012-2z" />
         <circle cx="12" cy="13" r="3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} />
@@ -58,7 +82,7 @@ const steps = [
     title: "Tell us your location",
     desc: "Send your city so we can help you fast.",
     icon: (
-      <svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
           d="M12 21c4.418 0 8-3.582 8-8 0-4.147-3.214-7.55-7.305-7.93a1 1 0 00-.328 0C7.214 5.45 4 8.853 4 13c0 4.418 3.582 8 8 8z" />
         <circle cx="12" cy="13" r="3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
@@ -174,19 +198,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── RATING STRIP ── */}
-      <section className="border-y border-gray-100 bg-white py-10 text-center">
-        <div className="flex justify-center gap-1 text-3xl">
-          {"★★★★★".split("").map((s, i) => (
-            <span key={i} className="text-yellow-400">{s}</span>
-          ))}
+      {/* ── TESTIMONIALS ── */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900">Drivers love 1ChipFix</h2>
+            <p className="mt-2 text-sm text-gray-500">Local drivers trust us for fast, friendly chip repair.</p>
+          </div>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.name}
+                className="flex flex-col gap-4 rounded-3xl border border-gray-100 bg-white p-6 text-center shadow-lg shadow-gray-200/40"
+              >
+                <div className="flex justify-center gap-1 text-yellow-400">
+                  {"★★★★★".split("").map((star, index) => (
+                    <span key={index} className="text-lg">{star}</span>
+                  ))}
+                </div>
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={80}
+                  height={80}
+                  className="mx-auto h-20 w-20 rounded-full object-cover"
+                  priority
+                />
+                <p className="text-sm leading-relaxed text-gray-600">{testimonial.text}</p>
+                <div className="text-sm font-semibold text-gray-800">{testimonial.name}</div>
+                <div className="text-xs text-gray-500">{testimonial.city}</div>
+              </div>
+            ))}
+          </div>
         </div>
-        <h2 className="mt-3 text-xl font-extrabold text-gray-900">
-          Customers rate 1ChipFix 4.9 out of 5
-        </h2>
-        <p className="mt-2 text-sm text-gray-500">
-          Our customers trust us to deliver the best chip repairs and service every time.
-        </p>
       </section>
 
       {/* ── BENEFITS ── */}

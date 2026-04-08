@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "zupikgtoimkjpcfiwbes.supabase.co",
         pathname: "/storage/v1/object/public/ChipFix/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 };
