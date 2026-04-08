@@ -93,18 +93,20 @@ const steps = [
 
 export default function HomePage() {
   const [locationLabel, setLocationLabel] = useState<string>("Serving your local area");
+  const [cityState, setCityState] = useState<string | null>(null);
 
   useEffect(() => {
     let canceled = false;
 
     fetch("https://ipapi.co/json/")
       .then((res) => res.json())
-      .then((data) => {
-        if (canceled) return;
-        const { city, region } = data ?? {};
-        if (city && region) {
-          setLocationLabel(`Serving ${city}, ${region} and nearby areas`);
-        }
+        .then((data) => {
+          if (canceled) return;
+          const { city, region } = data ?? {};
+          if (city && region) {
+            setLocationLabel(`Serving ${city}, ${region} and nearby areas`);
+            setCityState(`${city}, ${region}`);
+          }
       })
       .catch(() => {
         // keep fallback
@@ -198,30 +200,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <section className="bg-white py-16">
+      {/* ── RATING → TESTIMONIALS ── */}
+      <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900">Drivers love 1ChipFix</h2>
-            <p className="mt-2 text-sm text-gray-500">Local drivers trust us for fast, friendly chip repair.</p>
+          <div className="mb-6 text-center">
+            <div className="flex justify-center gap-1 text-3xl">
+              {"★★★★★".split("").map((s, i) => (
+                <span key={i} className="text-yellow-400">{s}</span>
+              ))}
+            </div>
+            <h2 className="mt-3 text-xl font-extrabold text-gray-900">
+              Customers rate 1ChipFix 4.9 out of 5
+            </h2>
+            <p className="mt-2 text-sm text-gray-500">
+              Our customers trust us to deliver the best chip repairs and service every time.
+            </p>
           </div>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.name}
-                className="flex flex-col gap-4 rounded-3xl border border-gray-100 bg-white p-6 text-center shadow-lg shadow-gray-200/40"
+                className="flex flex-col gap-3 rounded-3xl border border-gray-100 bg-white p-5 text-center shadow-sm shadow-gray-200/40"
               >
                 <div className="flex justify-center gap-1 text-yellow-400">
                   {"★★★★★".split("").map((star, index) => (
-                    <span key={index} className="text-lg">{star}</span>
+                    <span key={index} className="text-md">{star}</span>
                   ))}
                 </div>
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  width={80}
-                  height={80}
-                  className="mx-auto h-20 w-20 rounded-full object-cover"
+                  width={64}
+                  height={64}
+                  className="mx-auto h-16 w-16 rounded-full object-cover"
                   priority
                 />
                 <p className="text-sm leading-relaxed text-gray-600">{testimonial.text}</p>
@@ -230,6 +241,13 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      {/* ── SERVING LOCATION ── */}
+      <section className="bg-gray-50 py-6">
+        <div className="mx-auto max-w-7xl px-6 text-center text-sm uppercase tracking-widest text-gray-500">
+          <span className="font-bold text-gray-900">Serving:</span>{" "}
+          <span className="text-[#CC0000]">{cityState ?? "your local area"}</span>
         </div>
       </section>
 
