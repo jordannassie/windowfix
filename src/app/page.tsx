@@ -9,9 +9,10 @@ const LOGO =
 const HERO_IMG =
   "https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/Image.jpg";
 
-const PHONE = "+18005551234";
+const PHONE = "+19493316367";
+const PHONE_DISPLAY = "(949) 331-6367";
 const SMS_MESSAGE = encodeURIComponent(
-  "Hi, I have a windshield chip. I'm sending a photo now. My location is:"
+  "Hi 1ChipFix, I have a windshield chip. I'm sending a photo now. My location is:"
 );
 
 const testimonials = [
@@ -127,7 +128,7 @@ export default function HomePage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            (800) 555-1234
+            {PHONE_DISPLAY}
           </a>
         </nav>
       </header>
@@ -299,7 +300,7 @@ export default function HomePage() {
         />
         <p>© {new Date().getFullYear()} 1ChipFix · All rights reserved</p>
         <p className="mt-1">
-          <a href={`tel:${PHONE}`} className="hover:text-gray-200 transition">(800) 555-1234</a>
+          <a href={`tel:${PHONE}`} className="hover:text-gray-200 transition">{PHONE_DISPLAY}</a>
           {" · "}
           <a href="mailto:hello@1chipfix.com" className="hover:text-gray-200 transition">hello@1chipfix.com</a>
         </p>
