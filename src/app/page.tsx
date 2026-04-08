@@ -48,14 +48,14 @@ export default function HomePage() {
           <div className="flex items-center gap-2">
             <div className="overflow-hidden rounded-2xl bg-white/10 p-1">
               <Image
-                src="/1chipfix-logo.png"
+                src="https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/logo/ChatGPT%20Image%20Apr%208,%202026,%2007_13_17%20AM.png"
                 alt="1ChipFix logo"
-                width={48}
-                height={48}
+                width={64}
+                height={64}
                 className="h-10 w-10 object-cover"
+                priority
               />
             </div>
-            <span className="text-xl font-bold text-white">1ChipFix</span>
           </div>
           <a
             href="tel:+18005551234"
