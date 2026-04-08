@@ -120,8 +120,8 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
 
       {/* ── NAV ── */}
-      <header className="bg-black">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-1 leading-none">
+      <header className="bg-black py-0">
+        <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-3 py-0 leading-none">
           <Image
             src={LOGO}
             alt="1ChipFix"
