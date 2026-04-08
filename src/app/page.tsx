@@ -69,12 +69,10 @@ const steps = [
     title: "Tell Us Your Location",
     desc: "Send your city so we can help you fast.",
     icon: (
-      <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M5 17H3a1 1 0 01-1-1v-5l2-5h12l2 5v5a1 1 0 01-1 1h-2" />
-        <circle cx="7.5" cy="17.5" r="2.5" strokeWidth={1.5} />
-        <circle cx="16.5" cy="17.5" r="2.5" strokeWidth={1.5} />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 17h4" />
+      <svg className="h-16 w-16 text-[#CC0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <path strokeWidth={1.5}
+          d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" />
+        <circle cx="12" cy="9" r="2.5" strokeWidth={1.5} />
       </svg>
     ),
   },
