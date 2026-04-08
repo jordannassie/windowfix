@@ -46,18 +46,9 @@ const steps = [
     desc: "Reach us in 1 click from your phone.",
     icon: (
       <svg className="h-16 w-16 text-[#CC0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-        {/* phone body */}
-        <rect x="7" y="2" width="10" height="17" rx="2" strokeWidth={1.5} />
-        {/* speaker */}
-        <path strokeWidth={1.5} d="M10 4.5h4" />
-        {/* home button */}
-        <circle cx="12" cy="17" r="0.5" fill="currentColor" strokeWidth={1} />
-        {/* hand holding — palm curve */}
-        <path strokeWidth={1.5} d="M7 8C5 8.5 4 10 4 12.5c0 3 1.5 5 4 6" />
-        {/* fingers */}
-        <path strokeWidth={1.3} d="M17 7c1.5 0.5 2.5 2 2.5 3.5" />
-        <path strokeWidth={1.3} d="M17 10c1 0.3 1.8 1.2 1.8 2.5" />
-        <path strokeWidth={1.3} d="M17 13c0.8 0.3 1.3 1 1.3 2" />
+        <rect x="7" y="2" width="10" height="20" rx="2" strokeWidth={1.5} />
+        <path strokeWidth={1.5} d="M10 5h4" />
+        <circle cx="12" cy="19" r="0.75" fill="currentColor" strokeWidth={0} />
       </svg>
     ),
   },
@@ -67,14 +58,9 @@ const steps = [
     desc: "Text us a quick photo so we can see the damage.",
     icon: (
       <svg className="h-16 w-16 text-[#CC0000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-        {/* back photo (rotated slightly) */}
-        <rect x="5" y="3" width="14" height="11" rx="2" strokeWidth={1.5} transform="rotate(-8 12 8.5)" />
-        {/* front photo */}
-        <rect x="4" y="8" width="15" height="11" rx="2" strokeWidth={1.5} />
-        {/* sun circle */}
-        <circle cx="8" cy="12" r="1.2" strokeWidth={1.3} />
-        {/* mountain path */}
-        <path strokeWidth={1.3} d="M5.5 17.5l3.5-4 3 3 2-2.5 3.5 3.5" />
+        <rect x="3" y="5" width="18" height="14" rx="2" strokeWidth={1.5} />
+        <circle cx="8.5" cy="10" r="1.5" strokeWidth={1.3} />
+        <path strokeWidth={1.3} d="M3 16l4.5-4.5 3.5 3.5 2.5-2.5 5 5" />
       </svg>
     ),
   },
