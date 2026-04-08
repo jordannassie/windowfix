@@ -119,6 +119,10 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
 
+      <section className="bg-gray-100 py-1 text-center text-xs uppercase tracking-[0.5em] text-gray-500">
+        <span className="font-semibold text-gray-700">Serving</span>{" "}
+        <span className="font-semibold text-[#CC0000]">{cityState ?? "your local area"}</span>
+      </section>
       {/* ── NAV ── */}
       <header className="bg-black py-0">
         <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-3 py-0 leading-none">
@@ -241,13 +245,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-      {/* ── SERVING LOCATION ── */}
-      <section className="bg-gray-50 py-6">
-        <div className="mx-auto max-w-7xl px-6 text-center text-sm uppercase tracking-widest text-gray-500">
-          <span className="font-bold text-gray-900">Serving:</span>{" "}
-          <span className="text-[#CC0000]">{cityState ?? "your local area"}</span>
         </div>
       </section>
 
