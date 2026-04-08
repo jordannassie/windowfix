@@ -100,7 +100,7 @@ export default function HomePage() {
           </div>
           <div className="rounded-[32px] border border-white/10 bg-white/10 p-3 shadow-2xl backdrop-blur">
             <Image
-              src="/window-hero.png"
+              src="https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/images/Window1.jpg"
               alt="Technician repairing a windshield chip"
               width={580}
               height={420}
