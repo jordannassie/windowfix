@@ -14,21 +14,6 @@ const SMS_MESSAGE = encodeURIComponent(
   "Hi, I have a windshield chip. I'm sending a photo now. My location is:"
 );
 
-const benefits = [
-  {
-    title: "1 Click to Call",
-    desc: "Call us fast and get help right away.",
-  },
-  {
-    title: "1 Click to Text",
-    desc: "Text your chip photo and location in seconds.",
-  },
-  {
-    title: "Fast Local Help",
-    desc: "Serving local drivers with quick windshield chip repair.",
-  },
-];
-
 const testimonials = [
   {
     name: "Michael R.",
@@ -56,7 +41,7 @@ const testimonials = [
 const steps = [
   {
     num: "1",
-    title: "Call or text us",
+    title: "Call or Text Us",
     desc: "Reach us in 1 click from your phone.",
     icon: (
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,8 +52,8 @@ const steps = [
   },
   {
     num: "2",
-    title: "Send a photo of your chip",
-    desc: "A quick photo helps us understand the damage.",
+    title: "Send a Photo of Your Chip",
+    desc: "Text us a quick photo so we can see the damage.",
     icon: (
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
@@ -79,7 +64,7 @@ const steps = [
   },
   {
     num: "3",
-    title: "Tell us your location",
+    title: "Tell Us Your Location",
     desc: "Send your city so we can help you fast.",
     icon: (
       <svg className="h-16 w-16 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -248,39 +233,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── BENEFITS ── */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {benefits.map((b) => (
-              <div
-                key={b.title}
-                className="flex flex-col items-center rounded-2xl border border-gray-200 p-8 text-center shadow-sm transition hover:shadow-md"
-              >
-                <h3 className="text-xl font-bold text-[#CC0000]">{b.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-gray-600">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── HOW IT WORKS ── */}
+      {/* ── UNIFIED HOW IT WORKS ── */}
       <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-center text-3xl font-extrabold text-gray-900">
-            How it works
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="text-3xl font-extrabold text-gray-900">How it works</h2>
+          <p className="mt-2 text-sm text-gray-500">
+            Call or text in 1 click. Send your chip photo and location.
+          </p>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {steps.map((step) => (
-              <div key={step.num} className="flex flex-col items-center text-center">
-                <div className="flex flex-col items-center gap-3">
-                  <div>{step.icon}</div>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#CC0000] text-xl font-extrabold text-white shadow-md">
-                    {step.num}
-                  </div>
+              <div
+                key={step.num}
+                className="flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-lg shadow-gray-200/40"
+              >
+                <div>{step.icon}</div>
+                <div className="mt-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#CC0000] text-xl font-extrabold text-white">
+                  {step.num}
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-gray-900">{step.title}</h3>
+                <h3 className="mt-4 text-lg font-bold text-gray-900">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-500">{step.desc}</p>
               </div>
             ))}
