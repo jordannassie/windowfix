@@ -30,16 +30,36 @@ const steps = [
     num: "1",
     title: "Call or text us",
     desc: "Reach us in 1 click from your phone.",
+    icon: (
+      <svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+    ),
   },
   {
     num: "2",
     title: "Send a photo of your chip",
     desc: "A quick photo helps us understand the damage.",
+    icon: (
+      <svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+          d="M5 7h2l1-2h8l1 2h2a2 2 0 012 2v7a2 2 0 01-2 2h-6l-2 2l-2-2H5a2 2 0 01-2-2V9a2 2 0 012-2z" />
+        <circle cx="12" cy="13" r="3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} />
+      </svg>
+    ),
   },
   {
     num: "3",
     title: "Tell us your location",
     desc: "Send your city so we can help you fast.",
+    icon: (
+      <svg className="h-12 w-12 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+          d="M12 21c4.418 0 8-3.582 8-8 0-4.147-3.214-7.55-7.305-7.93a1 1 0 00-.328 0C7.214 5.45 4 8.853 4 13c0 4.418 3.582 8 8 8z" />
+        <circle cx="12" cy="13" r="3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+      </svg>
+    ),
   },
 ];
 
@@ -168,8 +188,11 @@ export default function HomePage() {
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {steps.map((step) => (
               <div key={step.num} className="flex flex-col items-center text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#CC0000] text-xl font-extrabold text-white shadow-md">
-                  {step.num}
+                <div className="flex flex-col items-center gap-3">
+                  <div>{step.icon}</div>
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#CC0000] text-xl font-extrabold text-white shadow-md">
+                    {step.num}
+                  </div>
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-gray-900">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-500">{step.desc}</p>
