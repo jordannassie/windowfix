@@ -46,16 +46,14 @@ export default function HomePage() {
       <header className="hero-bg">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-2">
-            <div className="overflow-hidden rounded-2xl bg-white/10 p-1">
-              <Image
-                src="https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/logo/ChatGPT%20Image%20Apr%208,%202026,%2007_13_17%20AM.png"
-                alt="1ChipFix logo"
-                width={64}
-                height={64}
-                className="h-10 w-10 object-cover"
-                priority
-              />
-            </div>
+            <Image
+              src="https://zupikgtoimkjpcfiwbes.supabase.co/storage/v1/object/public/ChipFix/logo/ChatGPT%20Image%20Apr%208,%202026,%2007_13_17%20AM.png"
+              alt="1ChipFix logo"
+              width={96}
+              height={96}
+              className="h-16 w-16 object-contain"
+              priority
+            />
           </div>
           <a
             href="tel:+18005551234"
